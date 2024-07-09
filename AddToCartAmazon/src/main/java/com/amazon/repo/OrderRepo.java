@@ -11,4 +11,6 @@ public interface OrderRepo extends CrudRepository<Order, Long> {
 	List<Order> findByUserId(String userId);
 	
 	Order save(Order order);
+	
+	void deleteByUserIdAndProductId(String userId, String ProductId);
 }

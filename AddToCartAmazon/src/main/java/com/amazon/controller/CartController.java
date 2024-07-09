@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.amazon.entity.Cart;
 import com.amazon.entity.CartDetails;
+import com.amazon.entity.Order;
 import com.amazon.service.CartService;
+import com.amazon.service.OrderService;
 
 @RestController
 @CrossOrigin("http://localhost:4200")
@@ -39,4 +41,6 @@ public class CartController {
 	        cartService.removeItem(productId, userId);
 	        return ResponseEntity.ok("Item removed successfully");
 	    }
+	 
+	 
 }

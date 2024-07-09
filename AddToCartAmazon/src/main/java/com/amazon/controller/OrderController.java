@@ -1,7 +1,10 @@
 package com.amazon.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,4 +35,14 @@ public class OrderController {
 	public OrderDetails displayAllProductInOrder(@PathVariable String userId) {
 		return orderService.displayAllProductInorder(userId);
 	}
+	
+	@DeleteMapping("remove/{userId}/{productId}")
+	public void removeOrder(@PathVariable String userId, @PathVariable String productId) {
+		orderService.remove(userId, productId);
+	}
+	
+	@GetMapping("getorder/{id}")
+	 public Optional<Order> getorder(@PathVariable Long id) {
+		 return  orderService.getOrder(id);
+	 }
 }

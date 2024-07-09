@@ -6,6 +6,7 @@ public class OrderDetails {
 	
 	private String userId;
 	private List<Product> list;
+	
 
 	public String getUserId() {
 		return userId;
